@@ -62,7 +62,7 @@
         }
         .animate-marquee {
             display: inline-block;
-            animation: marquee 25s linear infinite;
+            animation: marquee 14s linear infinite;
         }
         @media print {
             body * { visibility: hidden; background: transparent !important; }
@@ -106,37 +106,47 @@
         </div>
     </div>
 
-    <!-- Maintenance Overlay Banner -->
-    <div id="shop-closed-notice" class="hidden max-w-xl mx-auto px-4 pt-10 text-center space-y-4">
-        <div class="w-20 h-20 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto text-3xl shadow-inner"><i class="fa-solid fa-store-slash"></i></div>
-        <h2 class="text-xl font-black text-slate-900">শপ সাময়িকভাবে বন্ধ আছে</h2>
-        <p class="text-xs text-slate-500 leading-relaxed">সম্মানিত গ্রাহক, আমাদের system আপগ্রেড বা জরুরি রক্ষণাবেক্ষণের কারণে শপ ক্যাটালগ সাময়িকভাবে অফলাইনে রয়েছে।</p>
-    </div>
-
     <!-- Main Dynamic Portals -->
     <main id="app-main-content" class="max-w-7xl mx-auto px-4 py-6">
         
         <!-- VIEW 1: Storefront Catalog -->
         <div id="view-shop" class="app-view-panel space-y-5">
-            <div class="bg-white border border-orange-100 rounded-2xl p-2.5 flex items-center gap-2 shadow-sm">
-                <div class="text-slate-400 pl-2"><i class="fa-solid fa-magnifying-glass text-xs"></i></div>
-                <input type="text" id="store-search-input" oninput="renderStorefrontCatalog()" placeholder="আপনার পছন্দের ক্লাব বা জার্সির নাম দিয়ে সার্চ করুন..." class="flex-1 bg-transparent text-xs text-slate-900 focus:outline-none placeholder:text-slate-400">
-            </div>
-
-            <div class="glass-panel p-4 rounded-2xl flex items-center justify-between shadow-sm border-l-4 border-l-orange-500">
-                <div>
-                    <h1 class="text-base font-extrabold text-slate-900">এক্সক্লুসিভ কালেকশন</h1>
-                    <p class="text-[11px] text-slate-500">ডিজাইন সিলেক্ট করে আপনার নাম-নম্বর কাস্টমাইজ করুন।</p>
-                </div>
-                <span class="text-xs bg-orange-500 text-white font-bold px-3 py-1 rounded-xl shadow-sm">Premium Drops 🔥</span>
-            </div>
             
-            <div id="empty-catalog-state" class="text-center py-16 space-y-3 hidden">
-                <div class="w-16 h-16 bg-orange-50 text-orange-500 rounded-full flex items-center justify-center mx-auto text-xl shadow-inner"><i class="fa-solid fa-box-open"></i></div>
-                <p class="text-sm font-bold text-slate-800">কোনো প্রোডাক্ট এভেইলেবল নেই</p>
+            <!-- Maintenance Overlay Banner (Inside shop container only) -->
+            <div id="shop-closed-notice" class="hidden max-w-xl mx-auto py-10 text-center space-y-4">
+                <div class="w-20 h-20 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto text-3xl shadow-inner"><i class="fa-solid fa-store-slash"></i></div>
+                <h2 class="text-xl font-black text-slate-900">শপ সাময়িকভাবে বন্ধ আছে</h2>
+                <p class="text-xs text-slate-500 leading-relaxed">সম্মানিত গ্রাহক, আমাদের সিস্টেম আপগ্রেড বা জরুরি রক্ষণাবেক্ষণের কারণে শপ ক্যাটালগ সাময়িকভাবে অফলাইনে রয়েছে। ক্যাটালগ ছাড়া অন্যান্য সার্ভিস সচল আছে।</p>
             </div>
 
-            <div id="store-catalog" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4"></div>
+            <!-- Shop Dynamic Elements Container -->
+            <div id="shop-active-elements" class="space-y-5">
+                <!-- PREMIUM UPGRADED SEARCH BAR TERMINAL -->
+                <div class="bg-white border border-orange-200 focus-within:border-orange-500 focus-within:ring-2 focus-within:ring-orange-100 rounded-2xl p-1.5 flex items-center justify-between shadow-md shadow-orange-600/5 transition-all duration-300">
+                    <div class="flex items-center gap-3 pl-3 flex-1">
+                        <div class="text-orange-500"><i class="fa-solid fa-magnifying-glass text-sm"></i></div>
+                        <input type="text" id="store-search-input" oninput="renderStorefrontCatalog()" placeholder="আপনার পছন্দের ক্লাব বা জার্সির নাম দিয়ে সার্চ করুন..." class="w-full bg-transparent text-xs text-slate-900 focus:outline-none placeholder:text-slate-400 font-medium">
+                    </div>
+                    <button onclick="renderStorefrontCatalog()" class="bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-700 hover:to-amber-600 text-white text-[11px] font-bold px-4 py-2.5 rounded-xl transition shadow flex items-center gap-1.5">
+                        <span>খুঁজুন</span><i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <div class="glass-panel p-4 rounded-2xl flex items-center justify-between shadow-sm border-l-4 border-l-orange-500">
+                    <div>
+                        <h1 class="text-base font-extrabold text-slate-900">এক্সক্লুসিভ কালেকশন</h1>
+                        <p class="text-[11px] text-slate-500">ডিজাইন সিলেক্ট করে আপনার নাম-নম্বর কাস্টমাইজ করুন।</p>
+                    </div>
+                    <span class="text-xs bg-orange-500 text-white font-bold px-3 py-1 rounded-xl shadow-sm">Premium Drops 🔥</span>
+                </div>
+                
+                <div id="empty-catalog-state" class="text-center py-16 space-y-3 hidden">
+                    <div class="w-16 h-16 bg-orange-50 text-orange-500 rounded-full flex items-center justify-center mx-auto text-xl shadow-inner"><i class="fa-solid fa-box-open"></i></div>
+                    <p class="text-sm font-bold text-slate-800">কোনো প্রোডাক্ট এভেইলেবল নেই</p>
+                </div>
+
+                <div id="store-catalog" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4"></div>
+            </div>
         </div>
 
         <!-- VIEW 2: Order Tracker Portal -->
@@ -416,6 +426,7 @@
                     <div id="drag-drop-zone" onclick="document.getElementById('hidden-file-input').click()" class="border-2 border-dashed border-slate-200 bg-slate-50 p-5 rounded-xl text-center cursor-pointer flex flex-col items-center justify-center">
                         <i class="fa-solid fa-cloud-arrow-up text-xl text-orange-500 mb-1"></i>
                         <p class="text-xs font-bold text-slate-700">জার্সি ইমেজ আপলোড করুন (সর্বোচ্চ ৩টি ইমেজ)</p>
+                        <span class="text-[10px] text-orange-600 font-bold bg-orange-50 px-2 py-0.5 rounded-full border border-orange-100 mt-1"><i class="fa-solid fa-bolt"></i> অটো কম্প্রেসার একটিভ (Max 50KB)</span>
                         <input type="file" id="hidden-file-input" multiple accept="image/*" class="hidden" onchange="handleFileSelect(event)">
                     </div>
                     <div id="upload-preview-area" class="flex gap-2 py-1"></div>
@@ -424,7 +435,7 @@
 
                 <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
                     <div class="p-4 border-b border-slate-100"><h4 class="text-xs font-black text-slate-900 uppercase">লাইভ ক্যাটালগ আইটেমস</h4></div>
-                    <div class="overflow-x-auto"><table class="w-full text-xs text-left"><thead class="bg-slate-50 text-slate-500 font-bold"><tr><th class="p-3">প্রোডাক্ট</th><th class="p-3">मूल्य ও অফার</th><th class="p-3">স্পেসিফিকেশন</th><th class="p-3 text-right">অ্যাকশন</th></tr></thead><tbody id="adm-catalog-rows" class="divide-y divide-slate-100"></tbody></table></div>
+                    <div class="overflow-x-auto"><table class="w-full text-xs text-left"><thead class="bg-slate-50 text-slate-500 font-bold"><tr><th class="p-3">প্রোডাক্ট</th><th class="p-3">মূল্য ও অফার</th><th class="p-3">স্পেসিফিকেশন</th><th class="p-3 text-right">অ্যাকশন</th></tr></thead><tbody id="adm-catalog-rows" class="divide-y divide-slate-100"></tbody></table></div>
                 </div>
             </div>
 
@@ -528,11 +539,12 @@
                 document.getElementById('sys-marquee-input').value = window.systemMarqueeText;
                 document.getElementById('sys-passcode-input').value = window.systemAdminPasscode;
 
+                // পরিবর্তন: শপ ক্লোজড হলে শুধু ভিউ-শপের ভেতরের প্রোডাক্ট এলিমেন্টগুলো লুকাতে নোটিশ টগল করবে
                 if(window.systemShopStatus === 'closed') {
-                    document.getElementById('app-main-content').classList.add('hidden');
+                    document.getElementById('shop-active-elements').classList.add('hidden');
                     document.getElementById('shop-closed-notice').classList.remove('hidden');
                 } else {
-                    document.getElementById('app-main-content').classList.remove('hidden');
+                    document.getElementById('shop-active-elements').classList.remove('hidden');
                     document.getElementById('shop-closed-notice').classList.add('hidden');
                 }
             }
@@ -679,12 +691,40 @@
             window.currentUploadedImagesBase64 = [];
             document.getElementById('upload-preview-area').innerHTML = '';
             const limit = Math.min(files.length, 3);
+            
             for(let i=0; i<limit; i++) {
                 const reader = new FileReader();
                 reader.onload = function(evt) {
-                    window.currentUploadedImagesBase64.push(evt.target.result);
-                    document.getElementById('upload-preview-area').insertAdjacentHTML('beforeend', `<img src="${evt.target.result}" class="w-12 h-12 object-cover rounded-lg border border-orange-200">`);
-                }
+                    const img = new Image();
+                    img.src = evt.target.result;
+                    img.onload = function() {
+                        const canvas = document.createElement('canvas');
+                        let width = img.width;
+                        let height = img.height;
+                        
+                        const max_size = 700; 
+                        if (width > height) {
+                            if (width > max_size) { height *= max_size / width; width = max_size; }
+                        } else {
+                            if (height > max_size) { width *= max_size / height; height = max_size; }
+                        }
+                        
+                        canvas.width = width;
+                        canvas.height = height;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, width, height);
+                        
+                        const compressedBase64 = canvas.toDataURL('image/jpeg', 0.6);
+                        
+                        window.currentUploadedImagesBase64.push(compressedBase64);
+                        document.getElementById('upload-preview-area').insertAdjacentHTML('beforeend', `
+                            <div class="relative">
+                                <img src="${compressedBase64}" class="w-12 h-12 object-cover rounded-lg border border-orange-200">
+                                <span class="absolute -bottom-1 -right-1 bg-black text-white text-[7px] px-1 rounded font-sans">Ready</span>
+                            </div>
+                        `);
+                    };
+                };
                 reader.readAsDataURL(files[i]);
             }
         };
@@ -815,7 +855,7 @@
         function calculateLedgerAccountingMetrics() {
             let sales = 0; let del = 0; 
             window.orders.forEach(o => { 
-                if(o.status === 'অর্ডার ডেলিভারি সম্পন্ন') {
+                if(o.status === 'অर्डर ডেলিভারি সম্পন্ন') {
                     sales += (parseInt(o.bill) || 0); 
                 }
                 del += (parseInt(o.deliveryCharge) || 0); 
@@ -853,9 +893,9 @@
             const searchQuery = document.getElementById('search-order-admin').value.trim().toLowerCase();
 
             if(window.currentOrderFilterType === 'pending') {
-                targetList = targetList.filter(o => o.status !== 'অর্ডার ডেলিভারি সম্পন্ন');
+                targetList = targetList.filter(o => o.status !== 'অर्डर ডেলিভারি সম্পন্ন');
             } else if(window.currentOrderFilterType === 'completed') {
-                targetList = targetList.filter(o => o.status === 'অর্ডার ডেলিভারি সম্পন্ন');
+                targetList = targetList.filter(o => o.status === 'অर्डर ডেলিভারি সম্পন্ন');
             }
 
             if(searchQuery) {
@@ -870,7 +910,7 @@
                     <td class="p-3">
                         <select onchange="window.changeStatus('${o.firebaseKey}', this.value)" class="bg-slate-100 p-1.5 rounded-lg font-bold focus:outline-none">
                             <option value="${o.status}" selected disabled>${o.status}</option>
-                            <option value="অर्डर গ্রহণ করা হয়েছে">অর্ডার গ্রহণ করা হয়েছে</option>
+                            <option value="অर्डर গ্রহণ করা হয়েছে">অर्डर গ্রহণ করা হয়েছে</option>
                             <option value="প্রিন্ট চলমান..">প্রিন্ট চলমান..</option>
                             <option value="কুরিয়ারে পাঠানো হয়েছে">কুরিয়ারে পাঠানো হয়েছে</option>
                             <option value="অर्डर ডেলিভারি সম্পন্ন">অर्डर ডেলিভারি সম্পন্ন</option>
@@ -1063,7 +1103,7 @@
                 }
 
                 let reviewFormHtml = '';
-                if(o.status === 'অর্ডার ডেলিভারি সম্পন্ন') {
+                if(o.status === 'অर्डर ডেলিভারি সম্পন্ন') {
                     reviewFormHtml = `
                         <div class="bg-orange-50 border border-orange-200 rounded-2xl p-4 mt-4 space-y-2.5">
                             <p class="text-xs font-bold text-slate-800 text-center uppercase tracking-wide"><i class="fa-solid fa-star text-orange-500 animate-bounce"></i> আপনার একটি মূল্যবান রিভিউ ও রেটিং দিন</p>
