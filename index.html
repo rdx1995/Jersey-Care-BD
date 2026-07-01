@@ -143,7 +143,7 @@
         <div id="view-tracking" class="app-view-panel hidden max-w-md mx-auto space-y-5 pt-4">
             <div class="text-center space-y-1.5">
                 <div class="w-12 h-12 bg-orange-50 text-orange-600 rounded-full flex items-center justify-center mx-auto text-lg shadow-sm"><i class="fa-solid fa-satellite-dish"></i></div>
-                <h2 class="text-base font-extrabold text-slate-900">ল ট্র্যাকিং ইঞ্জিন</h2>
+                <h2 class="text-base font-extrabold text-slate-900">লাইভ ট্র্যাকিং ইঞ্জিন</h2>
                 <p class="text-[11px] text-slate-500">অর্ডারের রিসিটে থাকা ট্র্যাকিং আইডিটি ইনপুট দিন।</p>
             </div>
             <div class="glass-panel p-3 rounded-2xl flex gap-2 shadow-sm">
@@ -155,25 +155,34 @@
 
         <!-- VIEW 3: Corporate Info Hub -->
         <div id="view-company" class="app-view-panel hidden max-w-xl mx-auto space-y-5 pt-2">
-            <div class="glass-panel p-5 rounded-3xl space-y-6 shadow-md border-t-4 border-t-orange-600">
+            <div class="glass-panel p-6 rounded-3xl space-y-6 shadow-md border-t-4 border-t-orange-600">
                 <div class="border-b border-orange-100 pb-4 text-center">
-                    <h3 onclick="triggerGatekeeperAuth()" class="font-black text-slate-900 text-lg cursor-pointer hover:text-orange-600 tracking-wide">
+                    <h3 onclick="triggerGatekeeperAuth()" class="font-black text-slate-900 text-xl cursor-pointer hover:text-orange-600 tracking-wide uppercase">
                         <i class="fa-solid fa-building text-orange-600 mr-1.5"></i> JERSEY CARE BD
                     </h3>
                     <p class="text-[10px] text-orange-500 mt-0.5 uppercase tracking-widest font-bold">Official Operational Hub</p>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs">
-                    <div class="bg-gradient-to-br from-white to-orange-50/30 p-3.5 rounded-xl border border-orange-100/70 space-y-1">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                    <div class="bg-gradient-to-br from-white to-orange-50/40 p-4 rounded-xl border border-orange-100/70 space-y-1">
                         <span class="text-orange-600 font-bold block text-[11px] uppercase tracking-wider"><i class="fa-solid fa-user-tie mr-1"></i> প্রোপ্রাইটর</span>
                         <p class="text-slate-900 font-extrabold text-sm">মোঃ নয়ন ইসলাম</p>
                     </div>
-                    <div class="bg-gradient-to-br from-white to-orange-50/30 p-3.5 rounded-xl border border-orange-100/70 space-y-1">
+                    <div class="bg-gradient-to-br from-white to-orange-50/40 p-4 rounded-xl border border-orange-100/70 space-y-1">
                         <span class="text-orange-600 font-bold block text-[11px] uppercase tracking-wider"><i class="fa-solid fa-location-dot mr-1"></i> হেড অফিস ও শোরুম</span>
-                        <p class="text-slate-700 font-medium leading-relaxed">সাইনবোর্ড, নারায়ণগঞ্জ, ঢাকা।</p>
+                        <p class="text-slate-700 font-semibold leading-relaxed">সাইনবোর্ড, নারায়ণগঞ্জ, ঢাকা।</p>
                     </div>
                 </div>
 
-                <div class="bg-orange-50/50 border border-orange-100 p-4 rounded-2xl space-y-2.5">
+                <div class="bg-white border border-orange-100/80 p-4 rounded-2xl shadow-sm space-y-3">
+                    <h4 class="text-xs font-black text-slate-900 uppercase tracking-wide flex items-center gap-1.5"><i class="fa-solid fa-headset text-orange-500"></i> হেল্পলাইন সাপোর্ট</h4>
+                    <div class="grid grid-cols-2 gap-2 text-center">
+                        <a href="tel:+8801341302150" class="bg-orange-50 text-orange-700 border border-orange-100 font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5"><i class="fa-solid fa-phone"></i> সরাসরি কল</a>
+                        <a href="https://wa.me/8801341302150" target="_blank" class="bg-emerald-50 text-emerald-700 border border-emerald-100 font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5"><i class="fa-brands fa-whatsapp"></i> হোয়াটসঅ্যাপ</a>
+                    </div>
+                </div>
+
+                <div class="bg-orange-50/40 border border-orange-100 p-4 rounded-2xl space-y-2.5">
                     <h4 class="text-xs font-black text-slate-900 uppercase tracking-wide"><i class="fa-solid fa-circle-info text-orange-500 mr-1.5"></i> আমাদের শর্তাবলী ও নোটিশ</h4>
                     <ul class="text-[11px] text-slate-600 space-y-1.5 list-disc pl-4 leading-relaxed">
                         <li>ডেলিভারি টাইম সাধারণত <strong class="text-orange-600">৩ থেকে ৫ কর্মদিবস</strong> সময় লাগবে।</li>
@@ -184,6 +193,23 @@
             </div>
         </div>
     </main>
+
+    <!-- COURIER DATA INPUT MODAL (ADMIN CONSOLE) -->
+    <div id="courier-input-modal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-md z-[70] hidden flex items-center justify-center p-4">
+        <div class="bg-white border border-orange-100 rounded-3xl w-full max-w-xs p-5 space-y-4 shadow-2xl">
+            <div class="text-center">
+                <i class="fa-solid fa-truck-fast text-orange-600 text-2xl"></i>
+                <h3 class="text-sm font-black text-slate-900 mt-1">কুরিয়ার শিপমেন্ট ডেটা ইন্টিগ্রেশন</h3>
+            </div>
+            <input type="text" id="cour-name" placeholder="কুরিয়ার কোম্পানির নাম (যেমন: Steadfast)" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:outline-none">
+            <input type="text" id="cour-track" placeholder="কুরিয়ার ট্র্যাকিং আইডি" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:outline-none">
+            <input type="text" id="cour-phone" placeholder="কুরিয়ার এজেন্ট/সাপোর্ট নম্বর" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:outline-none">
+            <div class="flex gap-2">
+                <button onclick="closeCourierModal()" class="w-1/2 bg-slate-100 text-slate-500 font-bold py-2 rounded-xl text-xs">বাতিল</button>
+                <button onclick="submitCourierData()" class="w-1/2 bg-orange-600 text-white font-bold py-2 rounded-xl text-xs shadow">সেভ করুন</button>
+            </div>
+        </div>
+    </div>
 
     <!-- SECRET GATEKEEPER PASSCODE AUTH MODAL -->
     <div id="gatekeeper-modal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
@@ -389,7 +415,7 @@
                     </div>
                     <div id="drag-drop-zone" onclick="document.getElementById('hidden-file-input').click()" class="border-2 border-dashed border-slate-200 bg-slate-50 p-5 rounded-xl text-center cursor-pointer flex flex-col items-center justify-center">
                         <i class="fa-solid fa-cloud-arrow-up text-xl text-orange-500 mb-1"></i>
-                        <p class="text-xs font-bold text-slate-700">জার্সি ইমেজ আপলোড করুন</p>
+                        <p class="text-xs font-bold text-slate-700">জার্সি ইমেজ আপলোড করুন (সর্বোচ্চ ৩টি ইমেজ)</p>
                         <input type="file" id="hidden-file-input" multiple accept="image/*" class="hidden" onchange="handleFileSelect(event)">
                     </div>
                     <div id="upload-preview-area" class="flex gap-2 py-1"></div>
@@ -398,7 +424,7 @@
 
                 <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
                     <div class="p-4 border-b border-slate-100"><h4 class="text-xs font-black text-slate-900 uppercase">লাইভ ক্যাটালগ আইটেমস</h4></div>
-                    <div class="overflow-x-auto"><table class="w-full text-xs text-left"><thead class="bg-slate-50 text-slate-500 font-bold"><tr><th class="p-3">প্রোডাক্ট</th><th class="p-3">मूल্য ও অফার</th><th class="p-3">স্পেসিফিকেশন</th><th class="p-3 text-right">অ্যাকশন</th></tr></thead><tbody id="adm-catalog-rows" class="divide-y divide-slate-100"></tbody></table></div>
+                    <div class="overflow-x-auto"><table class="w-full text-xs text-left"><thead class="bg-slate-50 text-slate-500 font-bold"><tr><th class="p-3">প্রোডাক্ট</th><th class="p-3">मूल्य ও অফার</th><th class="p-3">স্পেসিফিকেশন</th><th class="p-3 text-right">অ্যাকশন</th></tr></thead><tbody id="adm-catalog-rows" class="divide-y divide-slate-100"></tbody></table></div>
                 </div>
             </div>
 
@@ -481,6 +507,7 @@
         window.selectedMethod = 'COD'; window.latestGeneratedTrackId = '';
         window.selectedReviewStarsCount = 5;
         window.currentOrderFilterType = 'pending';
+        window.tempStatusTargetKey = null;
 
         window.systemGlobalDeliveryCharge = 120;
         window.systemAdminPasscode = "1290";
@@ -535,7 +562,7 @@
         onValue(ref(db, 'reviews'), (snapshot) => {
             const data = snapshot.val();
             window.reviews = data ? Object.keys(data).map(key => ({id: key, ...data[key]})) : [];
-            window.renderStorefrontCatalog(); // রিয়েল-টাইম রিভিউ কাউন্ট আপডেটের জন্য
+            window.renderStorefrontCatalog();
         });
 
         window.executeSubmitReviewFromReceipt = function(targetProductId, targetProductTitle) {
@@ -575,7 +602,41 @@
         };
 
         window.deleteProduct = function(id) { if(confirm('মুছে ফেলতে চান?')) remove(ref(db, `products/${id}`)); };
-        window.changeStatus = function(fKey, stat) { update(ref(db, `orders/${fKey}`), { status: stat }); };
+        
+        window.changeStatus = function(fKey, stat) { 
+            if(stat === 'কুরিয়ারে পাঠানো হয়েছে') {
+                window.tempStatusTargetKey = fKey;
+                document.getElementById('cour-name').value = '';
+                document.getElementById('cour-track').value = '';
+                document.getElementById('cour-phone').value = '';
+                document.getElementById('courier-input-modal').classList.remove('hidden');
+            } else {
+                update(ref(db, `orders/${fKey}`), { status: stat }); 
+            }
+        };
+
+        window.submitCourierData = function() {
+            const cName = document.getElementById('cour-name').value.trim();
+            const cTrack = document.getElementById('cour-track').value.trim();
+            const cPhone = document.getElementById('cour-phone').value.trim();
+            if(!cName || !cTrack) { alert('কুরিয়ার নাম ও ট্র্যাকিং আইডি দেওয়া বাধ্যতামূলক!'); return; }
+            
+            update(ref(db, `orders/${window.tempStatusTargetKey}`), { 
+                status: 'কুরিয়ারে পাঠানো হয়েছে',
+                courierName: cName,
+                courierTrackingId: cTrack,
+                courierPhone: cPhone
+            }).then(() => {
+                closeCourierModal();
+                alert('কুরিয়ার ইনফো আপডেট সম্পন্ন!');
+            });
+        };
+
+        window.closeCourierModal = function() {
+            document.getElementById('courier-input-modal').classList.add('hidden');
+            window.syncAdminDashboardRows();
+        };
+
         window.deleteRecord = function(fKey) { if(confirm('মুছে ফেলবেন?')) remove(ref(db, `orders/${fKey}`)).then(() => window.closePremiumOrderModal()); };
 
         window.executeFinalOrderSubmit = function() {
@@ -604,7 +665,6 @@
                 document.getElementById('slip-items-body').innerHTML = items.map(it => `<tr><td class="py-1">${payload.productTitle}<br/><span class="font-bold text-orange-600">[Sz: ${it.size} | ${it.name}]</span></td><td class="text-right">৳${activePrice}</td></tr>`).join('');
                 window.closeFunnel(); document.getElementById('receipt-modal').classList.remove('hidden');
                 
-                // Clear Form Fields Safely
                 document.getElementById('cust-name').value = '';
                 document.getElementById('cust-phone').value = '';
                 document.getElementById('cust-emergency').value = '';
@@ -618,7 +678,8 @@
             const files = e.target.files; if(!files) return;
             window.currentUploadedImagesBase64 = [];
             document.getElementById('upload-preview-area').innerHTML = '';
-            for(let i=0; i<files.length; i++) {
+            const limit = Math.min(files.length, 3);
+            for(let i=0; i<limit; i++) {
                 const reader = new FileReader();
                 reader.onload = function(evt) {
                     window.currentUploadedImagesBase64.push(evt.target.result);
@@ -646,6 +707,13 @@
             for(let i=0; i<5; i++) nodes[i].className = (i < stars) ? "fa-solid fa-star text-amber-500 cursor-pointer text-sm" : "fa-solid fa-star text-slate-300 cursor-pointer text-sm";
         }
 
+        function changeDetailMainImage(src, element) {
+            document.getElementById('detail-main-img').src = src;
+            const thumbs = document.querySelectorAll('.gallery-thumb');
+            thumbs.forEach(t => t.classList.remove('border-orange-500', 'scale-105'));
+            element.classList.add('border-orange-500', 'scale-105');
+        }
+
         function renderStorefrontCatalog() {
             const container = document.getElementById('store-catalog'); if(!container) return;
             const query = document.getElementById('store-search-input').value.trim().toLowerCase();
@@ -659,7 +727,6 @@
                 const hasDiscount = p.discountPrice > 0 && p.discountPrice < p.price;
                 const finalPrice = hasDiscount ? p.discountPrice : p.price;
                 
-                // প্রোডাক্ট ভিত্তিক রিভিউ ও রেটিং ক্যালকুলেশন
                 const pReviews = (window.reviews || []).filter(r => r.productId === p.id);
                 const reviewCount = pReviews.length;
                 const avgRating = reviewCount > 0 ? (pReviews.reduce((sum, r) => sum + r.stars, 0) / reviewCount).toFixed(1) : "5.0";
@@ -692,7 +759,16 @@
             const hasDiscount = p.discountPrice > 0 && p.discountPrice < p.price;
             const finalPrice = hasDiscount ? p.discountPrice : p.price;
 
-            // পপআপের জন্য রিভিউ জেনারেশন
+            let thumbnailsHtml = '';
+            if(p.imgs && p.imgs.length > 0) {
+                thumbnailsHtml = `<div class="flex gap-2 justify-center mt-2">`;
+                p.imgs.forEach((img, index) => {
+                    const activeClass = index === 0 ? 'border-orange-500 scale-105' : 'border-slate-200';
+                    thumbnailsHtml += `<img src="${img}" onclick="changeDetailMainImage('${img}', this)" class="gallery-thumb w-14 h-14 object-cover rounded-xl border-2 ${activeClass} cursor-pointer transition-all duration-200">`;
+                });
+                thumbnailsHtml += `</div>`;
+            }
+
             const pReviews = (window.reviews || []).filter(r => r.productId === p.id);
             let reviewsHtml = `<p class="text-[11px] text-slate-400 italic">এই প্রোডাক্টে এখনো কোনো রিভিউ দেওয়া হয়নি।</p>`;
             if(pReviews.length > 0) {
@@ -708,8 +784,11 @@
             }
 
             document.getElementById('detail-modal-body').innerHTML = `
-                <div class="w-full h-64 bg-slate-50 rounded-2xl overflow-hidden"><img src="${p.imgs?.[0] || ''}" class="w-full h-full object-cover"></div>
-                <div class="space-y-3 mt-2 text-xs">
+                <div class="w-full h-64 bg-slate-50 rounded-2xl overflow-hidden relative">
+                    <img id="detail-main-img" src="${p.imgs?.[0] || ''}" class="w-full h-full object-cover transition-all duration-300">
+                </div>
+                ${thumbnailsHtml}
+                <div class="space-y-3 mt-4 text-xs">
                     <div class="flex justify-between items-start">
                         <div><h3 class="text-base font-extrabold text-slate-900">${p.title}</h3><span class="bg-orange-100 text-orange-700 font-bold px-2 py-0.5 rounded text-[9px] uppercase mt-1 inline-block">${p.badge || 'Premium Pack'}</span></div>
                         <div class="text-right">
@@ -723,9 +802,8 @@
                     </div>
                     <div class="bg-white p-3 rounded-xl border space-y-1"><span class="font-bold text-orange-600 block">জার্সির বিবরণ:</span><p class="text-slate-600 leading-relaxed">${p.desc || 'কোনো বিবরণ নেই।'}</p></div>
                     
-                    <!-- গ্লোবাল রিভিউ সেকশন -->
                     <div class="space-y-2 mt-2">
-                        <span class="font-bold text-slate-900 block border-b pb-1"><i class="fa-solid fa-comments text-orange-500 mr-1"></i> গ্রাহক রিভিউসমূহ (${pReviews.length})</span>
+                        <span class="font-bold text-slate-900 block border-b pb-1"><i class="fa-solid fa-comments text-orange-500 mr-1"></i>  গ্রাহক রিভিউসমূহ (${pReviews.length})</span>
                         <div class="space-y-1.5 max-h-40 overflow-y-auto custom-scrollbar">${reviewsHtml}</div>
                     </div>
                 </div>
@@ -737,8 +815,7 @@
         function calculateLedgerAccountingMetrics() {
             let sales = 0; let del = 0; 
             window.orders.forEach(o => { 
-                // শুধুমাত্র "অর্ডার ডেলিভারি সম্পন্ন" হলেই মোট রেভিনিউ হিসাবে যুক্ত হবে
-                if(o.status === 'অर्डर ডেলিভারি সম্পন্ন') {
+                if(o.status === 'অর্ডার ডেলিভারি সম্পন্ন') {
                     sales += (parseInt(o.bill) || 0); 
                 }
                 del += (parseInt(o.deliveryCharge) || 0); 
@@ -776,9 +853,9 @@
             const searchQuery = document.getElementById('search-order-admin').value.trim().toLowerCase();
 
             if(window.currentOrderFilterType === 'pending') {
-                targetList = targetList.filter(o => o.status !== 'অर्डर ডেলিভারি সম্পন্ন');
+                targetList = targetList.filter(o => o.status !== 'অর্ডার ডেলিভারি সম্পন্ন');
             } else if(window.currentOrderFilterType === 'completed') {
-                targetList = targetList.filter(o => o.status === 'অर्डर ডেলিভারি সম্পন্ন');
+                targetList = targetList.filter(o => o.status === 'অর্ডার ডেলিভারি সম্পন্ন');
             }
 
             if(searchQuery) {
@@ -793,7 +870,7 @@
                     <td class="p-3">
                         <select onchange="window.changeStatus('${o.firebaseKey}', this.value)" class="bg-slate-100 p-1.5 rounded-lg font-bold focus:outline-none">
                             <option value="${o.status}" selected disabled>${o.status}</option>
-                            <option value="অर्डर গ্রহণ করা হয়েছে">অर्डर গ্রহণ করা হয়েছে</option>
+                            <option value="অर्डर গ্রহণ করা হয়েছে">অর্ডার গ্রহণ করা হয়েছে</option>
                             <option value="প্রিন্ট চলমান..">প্রিন্ট চলমান..</option>
                             <option value="কুরিয়ারে পাঠানো হয়েছে">কুরিয়ারে পাঠানো হয়েছে</option>
                             <option value="অर्डर ডেলিভারি সম্পন্ন">অर्डर ডেলিভারি সম্পন্ন</option>
@@ -836,6 +913,18 @@
                 itemsListHtml += `</tbody></table></div>`;
             });
 
+            let courierAdminHtml = '';
+            if(o.courierName) {
+                courierAdminHtml = `
+                    <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4 mt-3 text-xs space-y-1">
+                        <h4 class="font-bold text-amber-900"><i class="fa-solid fa-truck-fast mr-1"></i> কুরিয়ার ট্র্যাকিং মেটাডাটা</h4>
+                        <p>কুরিয়ার পার্টনার: <strong>${o.courierName}</strong></p>
+                        <p>কুরিয়ার ট্র্যাকিং আইডি: <strong class="font-mono">${o.courierTrackingId}</strong></p>
+                        <p>কুরিয়ার হেল্পলাইন: <strong>${o.courierPhone || 'N/A'}</strong></p>
+                    </div>
+                `;
+            }
+
             document.getElementById('premium-order-body').innerHTML = `
                 <div class="bg-slate-50 border rounded-2xl p-4 space-y-2.5 shadow-sm">
                     <h4 class="font-extrabold text-slate-900 border-b pb-1.5 flex justify-between items-center text-xs">
@@ -850,6 +939,8 @@
                         <p class="text-slate-600 sm:col-span-2">ঠিকানা: <strong class="text-slate-900">${o.customerAddress}</strong></p>
                     </div>
                 </div>
+
+                ${courierAdminHtml}
 
                 <div class="bg-slate-50 border rounded-2xl p-4 space-y-1 mt-3 text-xs shadow-sm">
                     <h4 class="font-extrabold text-slate-900 border-b pb-1.5 mb-2"><i class="fa-solid fa-calculator text-orange-500 mr-1"></i> পেমেন্ট ও পণ্যের সারসংক্ষেপ</h4>
@@ -908,16 +999,45 @@
         }
 
         function launchOrderFunnel(pId) { window.currentActiveProduct = window.products.find(p => p.id === pId); document.getElementById('step-1-view').classList.remove('hidden'); document.getElementById('step-2-view').classList.add('hidden'); document.getElementById('step-3-view').classList.add('hidden'); document.getElementById('funnel-modal').classList.remove('hidden'); }
+        
         function goToStep2() {
             if(!document.getElementById('cust-name').value.trim() || !document.getElementById('cust-phone').value.trim() || !document.getElementById('cust-address').value.trim()) {
-                alert('অনুগ্রহ করে তারকাচিহ্নিত (*) আবশ্যিক ঘরগুলো পূরণ করুন!'); return;
+                alert('অনুগ্রহ করে সকল তথ্য পূরণ করুন!'); return;
             }
             document.getElementById('step-1-view').classList.add('hidden'); document.getElementById('step-2-view').classList.remove('hidden'); 
         }
+        
         function backToStep1() { document.getElementById('step-2-view').classList.add('hidden'); document.getElementById('step-1-view').classList.remove('hidden'); }
-        function generateJerseyInputBoxes() { const sizes = ['S','M','L','XL','XXL','3XL','4XL']; const target = document.getElementById('dynamic-jersey-fields'); target.innerHTML = ''; let list = []; sizes.forEach(sz => { const qty = parseInt(document.getElementById(`sqty-${sz}`).value) || 0; for(let i=0; i<qty; i++) list.push(sz); }); list.forEach((sz) => { target.insertAdjacentHTML('beforeend', `<div class="bg-slate-50 border p-2 rounded-xl flex gap-2 items-center text-xs"><span class="bg-orange-600 px-2 text-white font-mono rounded font-bold">${sz}</span><input type="text" placeholder="জার্সির নাম লিখুন" data-size="${sz}" class="jersey-name-input flex-1 bg-white border rounded px-2 py-1 uppercase font-bold focus:outline-none"><input type="number" placeholder="নম্বর" class="jersey-num-input w-16 bg-white border rounded px-2 py-1 font-mono font-bold focus:outline-none"></div>`); }); }
-        function goToStep3() { const names = document.querySelectorAll('.jersey-name-input'); if(names.length===0){alert('কমপক্ষে একটি জার্সির সাইজ বা সংখ্যা নির্ধারণ করুন!');return;} document.getElementById('step-2-view').classList.add('hidden'); document.getElementById('step-3-view').classList.remove('hidden'); const activePrice = window.currentActiveProduct.discountPrice > 0 ? window.currentActiveProduct.discountPrice : window.currentActiveProduct.price; const subtotal = activePrice * names.length; document.getElementById('bill-prod-base-price').innerText = `৳${activePrice} x ${names.length}`; document.getElementById('bill-total-qty').innerText = `${names.length} পিস`; document.getElementById('bill-delivery-charge').innerText = `৳${window.systemGlobalDeliveryCharge}`; document.getElementById('bill-grand-total').innerText = `৳${subtotal + window.systemGlobalDeliveryCharge}`; }
+        
+        function generateJerseyInputBoxes() { 
+            const sizes = ['S','M','L','XL','XXL','3XL','4XL']; 
+            const target = document.getElementById('dynamic-jersey-fields'); 
+            target.innerHTML = ''; 
+            let list = []; 
+            sizes.forEach(sz => { 
+                const qty = parseInt(document.getElementById(`sqty-${sz}`).value) || 0; 
+                for(let i=0; i<qty; i++) list.push(sz); 
+            }); 
+            list.forEach((sz) => { 
+                target.insertAdjacentHTML('beforeend', `<div class="bg-slate-50 border p-3 rounded-2xl flex gap-2 items-center text-xs shadow-sm"><span class="bg-orange-600 px-2.5 py-1 text-white font-mono rounded-xl font-bold">${sz}</span><input type="text" placeholder="জার্সির নাম লিখুন" data-size="${sz}" class="jersey-name-input flex-1 bg-white border rounded-xl px-3 py-2 uppercase font-bold focus:outline-none"><input type="number" placeholder="নম্বর" class="jersey-num-input w-20 bg-white border rounded-xl px-3 py-2 font-mono font-bold focus:outline-none"></div>`); 
+            }); 
+        }
+        
+        function goToStep3() { 
+            const names = document.querySelectorAll('.jersey-name-input'); 
+            if(names.length===0){alert('কমপক্ষে একটি জার্সির সাইজ বা সংখ্যা নির্ধারণ করুন!');return;} 
+            document.getElementById('step-2-view').classList.add('hidden'); 
+            document.getElementById('step-3-view').classList.remove('hidden'); 
+            const activePrice = window.currentActiveProduct.discountPrice > 0 ? window.currentActiveProduct.discountPrice : window.currentActiveProduct.price; 
+            const subtotal = activePrice * names.length; 
+            document.getElementById('bill-prod-base-price').innerText = `৳${activePrice} x ${names.length}`; 
+            document.getElementById('bill-total-qty').innerText = `${names.length} পিস`; 
+            document.getElementById('bill-delivery-charge').innerText = `৳${window.systemGlobalDeliveryCharge}`; 
+            document.getElementById('bill-grand-total').innerText = `৳${subtotal + window.systemGlobalDeliveryCharge}`; 
+        }
+        
         function backToStep2() { document.getElementById('step-3-view').classList.add('hidden'); document.getElementById('step-2-view').classList.remove('hidden'); }
+        
         function selectPaymentMethod(m) { window.selectedMethod = m; document.getElementById('gateway-simulation-box').className = m==='COD'?'hidden':'bg-pink-50 border p-3 rounded-xl space-y-1.5 text-xs'; document.getElementById('pay-cod').className = m==='COD'?'border-2 border-orange-600 bg-white p-3 rounded-xl text-center cursor-pointer shadow-sm font-bold text-orange-600':'border bg-white p-3 rounded-xl text-center cursor-pointer opacity-60'; document.getElementById('pay-bkash').className = m==='BKASH'?'border-2 border-orange-600 bg-white p-3 rounded-xl text-center cursor-pointer shadow-sm font-bold text-orange-600':'border bg-white p-3 rounded-xl text-center cursor-pointer opacity-60'; }
         
         function executeLiveTrackSearch() { 
@@ -928,8 +1048,22 @@
             if(!o) { 
                 resBox.innerHTML = `<div class="glass-panel p-4 rounded-2xl text-center text-xs font-bold text-red-500">দুঃখিত, এই ট্র্যাকিং আইডি দিয়ে কোনো রেকর্ড মেলেনি!</div>`; 
             } else { 
+                let courierHtml = '';
+                if(o.status === 'কুরিয়ারে পাঠানো হয়েছে' && o.courierName) {
+                    courierHtml = `
+                        <div class="bg-gradient-to-br from-amber-50 to-orange-50 border border-orange-100 rounded-2xl p-4 space-y-2">
+                            <h4 class="font-extrabold text-slate-900 text-xs flex items-center gap-1"><i class="fa-solid fa-truck-fast text-orange-600"></i> কুরিয়ার ও শিপমেন্ট তথ্য</h4>
+                            <div class="space-y-1 text-slate-600">
+                                <p>কুরিয়ার কোম্পানি: <strong class="text-slate-800">${o.courierName}</strong></p>
+                                <p>কুরিয়ার ট্র্যাকিং আইডি: <strong class="text-orange-600 font-mono">${o.courierTrackingId}</strong></p>
+                            </div>
+                            ${o.courierPhone ? `<a href="tel:${o.courierPhone}" class="w-full mt-1 bg-white border border-orange-200 text-orange-700 font-bold py-2 rounded-xl text-center block shadow-sm"><i class="fa-solid fa-phone mr-1"></i> কুরিয়ার এজেন্টে কল করুন</a>` : ''}
+                        </div>
+                    `;
+                }
+
                 let reviewFormHtml = '';
-                if(o.status === 'অर्डर ডেলিভারি সম্পন্ন') {
+                if(o.status === 'অর্ডার ডেলিভারি সম্পন্ন') {
                     reviewFormHtml = `
                         <div class="bg-orange-50 border border-orange-200 rounded-2xl p-4 mt-4 space-y-2.5">
                             <p class="text-xs font-bold text-slate-800 text-center uppercase tracking-wide"><i class="fa-solid fa-star text-orange-500 animate-bounce"></i> আপনার একটি মূল্যবান রিভিউ ও রেটিং দিন</p>
@@ -947,12 +1081,15 @@
                 }
 
                 resBox.innerHTML = `
-                    <div class="glass-panel p-4 rounded-2xl space-y-2.5 text-xs shadow-sm border-l-4 border-l-orange-500">
-                        <div class="flex justify-between items-center"><span class="font-bold text-slate-900">${o.productTitle}</span><span class="font-mono text-slate-400 text-[10px]">${o.trackingId}</span></div>
-                        <div class="border-t pt-2 mt-1 flex justify-between items-center">
-                            <span class="text-slate-500">বর্তমান স্ট্যাটাস:</span>
-                            <span class="bg-orange-100 text-orange-700 px-2.5 py-1 rounded-full font-bold text-[11px] border border-orange-200/50">${o.status}</span>
+                    <div class="space-y-3">
+                        <div class="glass-panel p-4 rounded-2xl space-y-2.5 text-xs shadow-sm border-l-4 border-l-orange-500">
+                            <div class="flex justify-between items-center"><span class="font-bold text-slate-900">${o.productTitle}</span><span class="font-mono text-slate-400 text-[10px]">${o.trackingId}</span></div>
+                            <div class="border-t pt-2 mt-1 flex justify-between items-center">
+                                <span class="text-slate-500">বর্তমান স্ট্যাটাস:</span>
+                                <span class="bg-orange-100 text-orange-700 px-2.5 py-1 rounded-full font-bold text-[11px] border border-orange-200/50">${o.status}</span>
+                            </div>
                         </div>
+                        ${courierHtml}
                         ${reviewFormHtml}
                     </div>
                 `; 
